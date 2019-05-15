@@ -43,13 +43,13 @@ node("master"){
     def String[] message = [
     "Greetings,",
     "This is to inform you that the Docker image ${image_base_tag} version ${image_version_tag}",
-    "This image contains RabbitMQ and",
+    "This image contains Ubuntu:18.04 LTS  and",
     "the Puppet agent and Nagios NRPE server",
     "This was successfully built and pushed to the registry.",
     " ",
     "Sincerely,",
     "Your faithful servant."," Jenkins"
     ]
-    sendEmail(qaTeam(),"ubuntu-rabbitmq built",message.join("\n"))
+    sendEmail(qaTeam(),"tenna-ubuntu built",message.join("\n"))
   }
 }
