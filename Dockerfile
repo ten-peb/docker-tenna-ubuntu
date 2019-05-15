@@ -6,7 +6,8 @@ MAINTAINER Peter L. Berghold <pberghold@tenna.com>
 RUN  export DEBIAN_FRONTEND=noninteractive && \
      apt-get update && \
      apt-get -y dist-upgrade && \
-     apt-get -y install wget curl apt-utils build-essential gcc make git
+     apt-get -y install wget curl apt-utils build-essential gcc make git \
+                ntp
 
 ## Grab the Puppet repository configuration
 # Grab the repository definition(s) for Puppet products 
