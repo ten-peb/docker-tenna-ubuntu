@@ -22,8 +22,8 @@ node("master"){
 
   def String giturl = "git@github.com:ten-peb/docker-tenna-ubuntu.git"
   def String clone2 = 'tenna-ubuntu'
-  def String image_base_tag = "tenna-ubuntu"
-  def String image_version_tag = "1.0.0"
+  def String image_base_tag = "tenna/ubuntu"
+  def String image_version_tag = "18.0.4"
 
   // Grab the latest version from GitHub to "clone2" subdirectory to work on
   stage("checkout source"){
