@@ -1,5 +1,5 @@
 # docker-tenna-ubuntu
-Base Docker image with Ubuntu, Puppet Agent and Nagios NRPE 
+Base Docker image with Ubuntu, NTP, Puppet Agent and Nagios NRPE 
 
 # USE
 
