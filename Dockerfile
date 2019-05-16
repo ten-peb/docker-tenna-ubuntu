@@ -19,10 +19,11 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 
 ## Grab the Puppet repository configuration
-# Grab the repository definition(s) for Puppet products 
-RUN wget --quiet --no-verbose \
-         http://apt.puppetlabs.com/puppet-release-bionic.deb
-RUN dpkg -i puppet-release-bionic.deb
+# Grab the repository definition(s) for Puppet products
+RUN mkdir -vp /tmp/workbench && \
+	cd /tmp/workbench && get --quiet --no-verbose \
+         http://apt.puppetlabs.com/puppet-release-bionic.deb && \
+	dpkg -i puppet-release-bionic.deb
 
 ## Install the Puppet agent, Nagios NRPE and Nagios plugins
 
@@ -33,3 +34,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
                         monitoring-plugins monitoring-plugins-basic \
 			nagios-plugins-contrib puppet-agent
 
+
+RUN rm -rf /tmp/workbench &&
+	apt -y autoremove 
