@@ -35,5 +35,5 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 			nagios-plugins-contrib puppet-agent
 
 
-RUN rm -rf /tmp/workbench &&
+RUN rm -rf /tmp/workbench && \
 	apt -y autoremove 

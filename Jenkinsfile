@@ -47,7 +47,7 @@ node("master"){
      "${currentBuild.fullDisplayName}",
      "${env.BUILD_URL} has result ${currentBuild.result}",
      " ",
-     "My sincerest apologies, your faithful servant,"
+     "My sincerest apologies, your faithful servant,",
      "-- Jenkins"
      ]
      sendMail(devopsTeam(),"Build Failed",message.join("\n"))
