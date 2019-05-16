@@ -52,7 +52,7 @@ node("master"){
      ]
      sendMail(devopsTeam(),"Build Failed",message.join("\n"))
    }
- }
+ 
   }
   // Brag about it.
   stage("Send Notification of Success"){
