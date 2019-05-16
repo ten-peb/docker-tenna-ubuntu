@@ -50,7 +50,7 @@ node("master"){
      "My sincerest apologies, your faithful servant,",
      "-- Jenkins"
      ]
-     sendMail(devopsTeam(),"Build Failed",message.join("\n"))
+     sendEmail(devopsTeam(),"Build Failed",message.join("\n"))
    }
  
   }
