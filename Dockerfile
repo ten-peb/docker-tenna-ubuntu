@@ -21,7 +21,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 ## Grab the Puppet repository configuration
 # Grab the repository definition(s) for Puppet products
 RUN mkdir -vp /tmp/workbench && \
-	cd /tmp/workbench && get --quiet --no-verbose \
+	cd /tmp/workbench && wget --quiet --no-verbose \
          http://apt.puppetlabs.com/puppet-release-bionic.deb && \
 	dpkg -i puppet-release-bionic.deb
 
