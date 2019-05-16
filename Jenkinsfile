@@ -31,12 +31,28 @@ node("master"){
   }
   // Build the image
   stage("build image"){
-    dir(clone2){
-      def String image_tag = image_base_tag + ':' + image_version_tag;
-      doDockerBuild(image_tag)
+    try {
+      dir(clone2){
+        def String image_tag = image_base_tag + ':' + image_version_tag;
+        doDockerBuild(image_tag)
 
-      doDockerBuild(image_base_tag + ':latest')
-    }		 
+        doDockerBuild(image_base_tag + ':latest')
+      }
+   } catch(err) {
+     currentBuild.result = 'FAILURE'
+   }
+   finally {
+     String[]   message = [
+     "I'm sorry to report a job has failed.",
+     "${currentBuild.fullDisplayName}",
+     "${env.BUILD_URL} has result ${currentBuild.result}",
+     " ",
+     "My sincerest apologies, your faithful servant,"
+     "-- Jenkins"
+     ]
+     sendMail(devopsTeam(),"Build Failed",message.join("\n"))
+   }
+ }
   }
   // Brag about it.
   stage("Send Notification of Success"){
