@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER Peter L. Berghold <pberghold@tenna.com>
-LABEL build build-2019-05-15
+LABEL build build-2019-05-21
+LABEL com.tenna.docker.name  ubuntu-LTS-1804
 ##
 ## Update the OS
 RUN  export DEBIAN_FRONTEND=noninteractive && \
