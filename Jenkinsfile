@@ -40,8 +40,6 @@ node("master"){
       }
    } catch(err) {
      currentBuild.result = 'FAILURE'
-   }
-   finally {
      String[]   message = [
      "I'm sorry to report a job has failed.",
      "${currentBuild.fullDisplayName}",
